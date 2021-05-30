@@ -4,6 +4,7 @@
             <tr>
                 <th scope="col">Title</th>
                 <th scope="col">Body</th>
+                <th scope="col">Deadline</th>
                 <th scope="col">UUID</th>
             </tr>
         </thead>
@@ -12,6 +13,7 @@
                 <tr>
                     <td scope="row"><%= task.title%></td>
                     <td><%= task.body%></td>
+                    <td><%= task.deadline%></td>
                     <td><%= task.id%></td>
                     <td><%= link_to "View", task %></td>
                     <td><%= link_to "Edit", edit_task_path(task) %></td>
