@@ -1,0 +1,33 @@
+<div class='container'>
+        <%= form_with scope: :task, url: task_create_path, local: true do |f| %>
+        <%# url attr is where the user is redirected once the form is submitted
+        url: use alias for value; you can view aliases by issuing the command:
+        rails routes outside rails console %>
+
+    <div>
+        <% if @task.errors.any? %>
+        <ul>
+            <% @task.errors.full_messages.each do |msg| %>
+                <li class="alert alert-danger" role="alert" ><%= msg %></li>
+            <% end %>
+        </ul>
+        <% end %>
+    </div>
+
+
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+
+    <div>
+        <%= f.label :body %>
+        <%= f.text_area :body, size: '100x20' %>
+    </div>
+
+    <div>
+        <%= f.submit :Post, class: 'btn btn-primary'%>
+    </div>
+
+<% end %>
+</div>
