@@ -21,3 +21,7 @@
     command:
     rails g migration <name of what you want to do (snakecase) (user_defined)>
     rails g migration 
+
+
+### Questions:
+    1. I thought 'resources :tasks' handles all HTTP methods and routing. How can I properly take advantage of this so that I don't need to create redundant HTTP methods for my update and create?
