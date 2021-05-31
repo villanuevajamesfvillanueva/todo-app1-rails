@@ -1,6 +1,6 @@
 
 <div class='container'>
-    <%= form_with scope: :task, url: tasks_update_path, method: :put, local: true do |f| %>
+    <%= form_with scope: :task, url: tasks_path, method: :put, local: true do |f| %>
     <%# url attr is where the user is redirected once the form is submitted
     url: use alias for value; you can view aliases by issuing the command:
     rails routes outside rails console %>
