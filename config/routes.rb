@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   put '/tasks/:id/edit', to: 'tasks#update', as: 'tasks_update'
   post '/tasks' => 'tasks#create', as: 'task_create'
   resources :tasks
+
+  resources :categories
 end
