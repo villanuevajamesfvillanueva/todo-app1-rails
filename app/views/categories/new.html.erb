@@ -1,0 +1,29 @@
+<div class='container'>
+        <%= form_with scope: :category, url: categories_path, local: true do |f| %>
+        <%# url attr is where the user is redirected once the form is submitted
+        url: use alias for value; you can view aliases by issuing the command:
+        rails routes outside rails console %>
+
+    <div>
+        <% if @category.errors.any? %>
+        <ul>
+            <% @category.errors.full_messages.each do |msg| %>
+                <li class="alert alert-danger" role="alert" ><%= msg %></li>
+            <% end %>
+        </ul>
+        <% end %>
+    </div>
+
+
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+
+
+    <div>
+        <%= f.submit :Post, class: 'btn btn-primary'%>
+    </div>
+
+<% end %>
+</div>
