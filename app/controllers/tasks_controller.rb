@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
     def index
         @tasks = Task.all.order("updated_at DESC")
+        @categories = Category.all
     end
 
     def new                         
@@ -44,7 +45,7 @@ class TasksController < ApplicationController
 
     private
     def task_params
-        params.require(:task).permit(:title, :body, :deadline)
+        params.require(:task).permit(:title, :body, :deadline, :category_id)
     end
 
 end

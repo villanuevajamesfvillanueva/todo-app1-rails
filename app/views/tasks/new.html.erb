@@ -31,6 +31,11 @@
     </div>
 
     <div>
+        <%= f.label :category_id %>
+        <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %>
+    </div>
+
+    <div>
         <%= f.submit :Post, class: 'btn btn-primary'%>
     </div>
 
