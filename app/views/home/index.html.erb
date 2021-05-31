@@ -1,0 +1,61 @@
+<div class="table table-responsive-lg">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">title</th>
+                <th scope="col">body</th>
+                <th scope="col">deadline</th>
+                <th scope="col">id(pk)</th>
+                <th scope="col">category_id(fk)</th>
+                <th scope="col">category_name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @tasks.each do |task| %>
+                <tr>
+                    <td scope="row"><%= task.title%></td>
+                    <td><%= task.body%></td>
+                    <td><%= task.deadline%></td>
+                    <td><%= task.id%></td>
+                    <td><%= task.category_id%></td>
+                    <% c = @categories.to_a.map(&:serializable_hash) %>
+                    <% c.each do |categ| %>
+                        <% if (categ['id'] == task.category_id) %>
+                            <td><%= categ['name']%></td>
+                        <% end %>   
+                    <% end %>
+                    <td><%= link_to "View", task %></td>
+                    <td><%= link_to "Edit", edit_task_path(task) %></td>
+                    <td><%= link_to "Delete", task, method: :delete, data: { confirm: "Are you sure?" } %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+<br>
+<%= link_to "New task", new_task_path %>
+
+
+<div class="table table-responsive-lg">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">UUID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @categories.each do |categ| %>
+                <tr>
+                    <td scope="row"><%= categ.name%></td>
+                    <td><%= categ.id%></td>
+                    <td><%= link_to "View", categ %></td>
+                    <td><%= link_to "Edit", edit_category_path(categ) %></td>
+                    <td><%= link_to "Delete", categ, method: :delete, data: { confirm: "Are you sure?" } %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+<br>
+<%= link_to "New Category", new_category_path %>
