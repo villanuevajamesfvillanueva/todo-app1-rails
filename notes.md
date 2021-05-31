@@ -25,3 +25,5 @@
 
 ### Questions:
     1. I thought 'resources :tasks' handles all HTTP methods and routing. How can I properly take advantage of this so that I don't need to create redundant HTTP methods for my update and create?
+
+    2. Currently, displaying categories rely on task controller and task views. I think this is not the rails way.

@@ -1,0 +1,23 @@
+<div class="table table-responsive-lg">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">UUID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @categories.each do |categ| %>
+                <tr>
+                    <td scope="row"><%= categ.name%></td>
+                    <td><%= categ.id%></td>
+                    <td><%= link_to "View", categ %></td>
+                    <td><%= link_to "Edit", edit_category_path(categ) %></td>
+                    <td><%= link_to "Delete", categ, method: :delete, data: { confirm: "Are you sure?" } %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+<br>
+<%= link_to "New Category", new_category_path %>
