@@ -17,7 +17,7 @@ class TasksController < ApplicationController
 
         if @task.valid?
             @task.save
-            redirect_to '/' 
+            redirect_to '/', notice: 'Task was created successfully.'
             
         else
             render :new
@@ -31,7 +31,7 @@ class TasksController < ApplicationController
     def update
         @task = Task.find(params[:id])
         if @task.update(task_params)
-            redirect_to '/'
+            redirect_to '/', notice: 'Task was updated successfully.'
         else
             render :edit
         end
@@ -40,7 +40,7 @@ class TasksController < ApplicationController
     def destroy
         @task = Task.find(params[:id])
         @task.destroy
-        redirect_to '/'
+        redirect_to '/', notice: 'Task was deleted successfully.'
     end
 
     private
