@@ -20,7 +20,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get create' do
     post tasks_path, params: { task: {title: 'task title', body: 'task body', deadline: Date.tomorrow, category_id: ''} }
-    assert_response :success
+    assert_response :redirect
   end
 
 

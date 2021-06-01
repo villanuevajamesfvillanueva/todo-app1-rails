@@ -3,7 +3,9 @@
 one:
   title: MyString
   body: MyText
+  # deadline: Date.tomorrow
 
 two:
   title: MyString
   body: MyText
+  # deadline: Date.tomorrow
