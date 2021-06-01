@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
     has_many :tasks, dependent: :nullify
-    validates :name, uniqueness: true
+    validates :name, presence: true, uniqueness: true
 end
