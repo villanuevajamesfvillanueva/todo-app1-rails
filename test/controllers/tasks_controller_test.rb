@@ -4,4 +4,55 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
+  setup do
+    @task = tasks(:one)
+  end
+  
+  test 'should get index' do
+    get tasks_path
+    assert_response :success
+  end
+
+  test 'should get new' do
+    get new_task_path
+    assert_response :success
+  end
+
+  test 'should get create' do
+    post tasks_path, params: { task: {title: 'task title', body: 'task body', deadline: Date.tomorrow, category_id: ''} }
+    assert_response :success
+  end
+
+
+  test "should create task" do
+    assert_difference 'Task.count', 1 do
+      post tasks_path(@task), params: { task: {title: 'task title', body: 'task body', deadline: Date.tomorrow, category_id: ''} }
+    end
+    assert_redirected_to '/'
+  end
+
+  test "should show a task" do
+    get task_path(@task)
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get edit_task_path(@task)
+    assert_response :success
+  end
+
+  test "should update a task" do
+    put task_url(@task), params: { task: {title: 'task title', body: 'task body', deadline: Date.tomorrow, category_id: ''} }
+    assert_redirected_to '/'
+  end
+
+  test "should destroy a task" do
+    assert_difference('Task.count', -1) do
+      delete task_url(@task)
+    end
+
+    assert_redirected_to '/'
+  end
+
+
 end
