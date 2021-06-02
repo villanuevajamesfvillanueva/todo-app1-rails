@@ -2,7 +2,7 @@
     <br/>
     <h1><%= @category.name %></h1>
 
-    <%= link_to 'Home', '/', class: 'btn btn-primary'%>
+    <%= link_to 'Home', root_path, class: 'btn btn-primary'%>
     <%= link_to 'Edit', edit_category_path(@category), class: 'btn btn-primary'%>
     <%= link_to 'Delete', @category, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
 </div>
