@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
 
         if @category.valid?
             @category.save
-            redirect_to '/', notice: 'Category was created successfully.'
+            redirect_to root_path, notice: 'Category was created successfully.'
             
         else
             render :new
@@ -32,7 +32,7 @@ class CategoriesController < ApplicationController
     def update
         @category = Category.find(params[:id])
         if @category.update(category_params)
-            redirect_to '/', notice: 'Category was updated successfully.'
+            redirect_to root_path, notice: 'Category was updated successfully.'
         else
             render :edit
         end
@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
     def destroy
         @category = Category.find(params[:id])
         @category.destroy
-        redirect_to '/', notice: 'Category was deleted successfully.'
+        redirect_to root_path, notice: 'Category was deleted successfully.'
     end
     
 
