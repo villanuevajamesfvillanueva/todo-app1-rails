@@ -20,6 +20,10 @@
         <%= f.text_field :name %>
     </div>
 
+    <div>
+        <%= f.text_field :user_id, id: :category_user_id, value: current_user.id, type: :hidden %>
+    </div>
+
 
     <div>
         <%= f.submit :Post, class: 'btn btn-primary'%>
