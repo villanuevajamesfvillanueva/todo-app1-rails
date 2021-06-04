@@ -8,6 +8,7 @@
                 <th scope="col">id(pk)</th>
                 <th scope="col">category_id(fk)</th>
                 <th scope="col">category_name</th>
+                <th scope="col">user_email</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,7 @@
                             <td><%= categ['name']%></td>
                         <% end %>   
                     <% end %>
+                    <td><%= task.category.user.email%></td>
                     <td><%= link_to "View", task %></td>
                     <td><%= link_to "Edit", edit_task_path(task) %></td>
                     <td><%= link_to "Delete", task, method: :delete, data: { confirm: "Are you sure?" } %></td>
@@ -50,7 +52,7 @@
                 <tr>
                     <td scope="row"><%= categ.name%></td>
                     <td><%= categ.id%></td>
-                    <td><%= categ.user_id%></td>
+                    <td><%= categ.user.email%></td>
                     <td><%= link_to "View", categ %></td>
                     <td><%= link_to "Edit", edit_category_path(categ) %></td>
                     <td><%= link_to "Delete", categ, method: :delete, data: { confirm: "Are you sure?" } %></td>

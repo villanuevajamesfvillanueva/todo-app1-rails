@@ -34,6 +34,7 @@
     <div>
         <%= f.label :category_id %>
         <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %>
+        <!--options should only be current_user's categories-->
     </div>    
 
 
