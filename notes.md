@@ -23,7 +23,10 @@
     rails g migration 
 
 
-### Questions:
+### To Fix:
     1. In displaying tasks and categories of user, only the current_user's
     tasks and categories should be shown.
     2. When creating new tasks, only current_user's categoires should be shown.
+    3. Uniqueness of task and category names should only be true for each user, meaning different users can have the same task and category names.
+    4. Tasks table should also have a column for user_id.
+    5. Add username field to user registration.
