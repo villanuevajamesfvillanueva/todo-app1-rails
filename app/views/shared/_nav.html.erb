@@ -10,7 +10,7 @@
       
 
     <% if user_signed_in? %>
-      <li>Welcome back, <%= current_user.email %></li>
+      <li>Welcome back, <%= current_user.username %></li>
 
       <li class="nav-item active">
         <%= link_to 'Home', root_path, class:'nav-link'%>
