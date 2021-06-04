@@ -24,4 +24,6 @@
 
 
 ### Questions:
-    
+    1. In displaying tasks and categories of user, only the current_user's
+    tasks and categories should be shown.
+    2. When creating new tasks, only current_user's categoires should be shown.
