@@ -1,18 +1,13 @@
 require "test_helper"
 
 class TaskTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-
  
-
   test 'should not save task without title' do
     task = Task.create(
       title: nil,
       body: 'task description'
     )
-    assert_not task.save, 'Error! Task saved without title'
+    assert_not task.valid?, 'Invalid! Task\'s title is missing'
   end
 
   test 'should not save task with empty string in title' do
@@ -20,7 +15,7 @@ class TaskTest < ActiveSupport::TestCase
       title: '',
       body: 'task description'
     )
-    assert_not task.save, 'Error! Task saved with empty string as title'
+    assert_not task.valid?, 'Invalid! Task\'s title cannot be empty string'
   end
 
   test 'should not save task without body' do
@@ -29,7 +24,7 @@ class TaskTest < ActiveSupport::TestCase
       body: nil
     )
 
-    assert_not task.save, 'Error! Task saved without body'
+    assert_not task.valid?, 'Invalid! Task\'s body is missing'
   end
 
   test 'should not save task with empty string in body' do
@@ -37,7 +32,7 @@ class TaskTest < ActiveSupport::TestCase
       title: 'task title',
       body: ''
     )
-    assert_not task.save, 'Error! Task saved with empty string as body'
+    assert_not task.valid?, 'Invalid! Task\'s body cannot be empty string'
   end
 
 end
