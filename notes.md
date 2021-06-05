@@ -26,7 +26,6 @@
 ### To Fix:
     1. In displaying tasks and categories of user, only the current_user's
     tasks and categories should be shown.
-    2. Uniqueness of task and category names should only be true for each user, meaning different users can have the same task and category names.
-    3. Tasks table should also have a column for user_id.
-    4. Add username field to user registration.
-    5. Tests are now broken
+    2. Fix test for categories controller
+    3. Make a new root page
+        -should include the user sign up/sign in form
