@@ -2,6 +2,7 @@ class Task < ApplicationRecord
     belongs_to :category, optional: true
 
     validate :uniqueness_to_user
+    # validate :unique_to_user
     validates :title, presence: true
     validates :body, presence: true
     validates :deadline, presence: true
@@ -20,7 +21,14 @@ class Task < ApplicationRecord
         end
     end
 
-    
-    
+    # def user
+    #     category.user
+    # end
+
+    # def unique_to_user
+    #     results = user.tasks.where(title: title)
+
+    #     errors.add(:title, "already exists") if results.present?
+    # end
 
 end
