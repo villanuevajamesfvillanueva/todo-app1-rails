@@ -14,8 +14,25 @@
  *= require_self
  */
 
- .table {
+.table {
     text-align: center;
- }
+}
+
+.mymain {
+    display: flex;
+    height: 100vh;
+    
+}
+
+    .mynavcontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 20vw;
+        height: 100vh;
+    }
 
 
+        .navbar {
+            height: 100vh;
+        }
