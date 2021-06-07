@@ -70,7 +70,7 @@
             <h3>Tasks</h3>
             <div class="form-group scope">
                 <select class="form-control" id="sel1">
-                    <option>Today</option>
+                    <option selected>Today</option>
                     <option>This Week</option>
                     <option>This Month</option>
                     <option>This Year</option>
@@ -99,6 +99,17 @@
                     <div class='task-counter'><%= @tasks.where(status: "unfinished").count %></div>
                 </div>
                 <%= link_to "+", new_task_path, type: :button, class: 'btn btn-primary add-task' %>
+
+                <% @tasks.where(status: "unfinished").each do |todo| %>
+                    <div class='mytask'>
+                        <div class='mytask-title'>
+                            <h5><%= todo.title %></h5>
+                            <span class='mytask-deadline'><%= todo.deadline %></span>
+                        </div>
+                        <div class='mytask-body'><%= todo.body.first(200) %></div>
+                    </div>
+                    
+                <% end %>
             </div>
         </div>
         
