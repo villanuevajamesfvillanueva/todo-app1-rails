@@ -24,8 +24,7 @@
 
 
 ### To Fix:
-    1. In displaying tasks and categories of user, only the current_user's
-    tasks and categories should be shown.
-    2. Fix test for categories controller
-    3. Make a new root page
-        -should include the user sign up/sign in form
+    1. Problem of enabling creation of task with optional categ:
+        -task not being displayed in the page since tasks connected to users through categ;
+        -no categ: can't link to user
+        
