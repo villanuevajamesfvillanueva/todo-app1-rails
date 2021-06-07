@@ -1,0 +1,28 @@
+
+
+
+<ul class="nav">
+    <form class="form-inline my-2 my-lg-0">
+        <%= image_tag 'search.svg', size: "20x20" %>
+        <input class="searchbar form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+    <li class="nav-item">
+        <%= image_tag 'info.svg', size: "20x20" %>
+    </li>
+    <li class="nav-item">
+        <%= image_tag 'bell.svg', size: "20x20" %>
+    </li>
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.username %>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Edit Profile', edit_user_registration_path, class:'dropdown-item'%>
+            <a class="dropdown-item" href="#">Settings</a>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'dropdown-item'%>
+        </div>
+    </li>
+    
+</ul>
