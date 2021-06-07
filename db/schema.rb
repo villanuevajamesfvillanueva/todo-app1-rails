@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_212918) do
+ActiveRecord::Schema.define(version: 2021_06_07_100908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_212918) do
     t.datetime "updated_at", precision: 6, null: false
     t.date "deadline"
     t.uuid "category_id"
+    t.string "status"
     t.index ["category_id"], name: "index_tasks_on_category_id"
   end
 
