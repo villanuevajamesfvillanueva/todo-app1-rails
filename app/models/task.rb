@@ -16,7 +16,7 @@ class Task < ApplicationRecord
         SQL
 
         records = ActiveRecord::Base.connection.exec_query(sql).to_a
-        if (records.present?)
+        if (records.present? && new_record?)
             errors.add(:title, "already exists")    
         end
     end
