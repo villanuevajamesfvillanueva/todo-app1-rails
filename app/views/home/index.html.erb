@@ -80,7 +80,7 @@
         <div class='status-container'>
             <div class='status'>
                 <div class='status-header'>
-                    <span>Completed</span>
+                    <h5>Completed</h5>
                     <div class='task-counter'><%= @tasks.where(status: "completed").count %></div>
 
                 </div>
@@ -88,14 +88,14 @@
 
             <div class='status'>
                 <div class='status-header'>
-                    <span>In Progress</span>
+                    <h5>In Progress</h5>
                     <div class='task-counter'><%= @tasks.where(status: "in_progress").count %></div>
                 </div>
             </div>
 
             <div class='status'>
                 <div class='status-header'>
-                    <span>To Do</span>
+                    <h5>To Do</h5>
                     <div class='task-counter'><%= @tasks.where(status: "unfinished").count %></div>
                 </div>
                 <%= link_to "+", new_task_path, type: :button, class: 'btn btn-primary add-task' %>
@@ -103,7 +103,7 @@
                 <% @tasks.where(status: "unfinished").each do |todo| %>
                     <div class='mytask'>
                         <div class='mytask-title'>
-                            <h5><%= todo.title %></h5>
+                            <td><%= link_to todo.title, todo, class: 'mytask-title-title'%></td>
                             <span class='mytask-deadline'><%= todo.deadline %></span>
                         </div>
                         <div class='mytask-body'><%= todo.body.first(200) %></div>

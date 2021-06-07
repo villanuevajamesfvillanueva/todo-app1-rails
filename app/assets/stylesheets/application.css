@@ -18,14 +18,37 @@
     --line-color: #d2d2d2;
     --status-bg-color: #ceead460;
     --add-task-bg-color: #aee5B0;
+    --task-counter-color: #40694c;
 }
+
+
+/*-------------------- custom scrollbar --------------------*/
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: rgb(207, 207, 207); 
+    border-radius: 5px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(160, 160, 160);  
+}
+
 
 .table {
     text-align: center;
 }
 
+
 .myheader {
-    /* background-color: red; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,14 +148,26 @@
             border: 1px solid var(--line-color);
             border-radius: 15px;
             background-color: var(--status-bg-color);
+            overflow-y: scroll;
         }
 
             .status-header {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 margin: 20px auto 20px;
                 width: 80%;
             }
+
+                .task-counter {
+                    width: 40px;
+                    height: 30px;
+                    background-color: #FDB069;
+                    text-align: center;
+                    border-radius: 0.25rem;
+                    font-weight: bold;
+                    color: var(--task-counter-color);
+                }
 
             .add-task {
                 width: 80%;
@@ -160,6 +195,12 @@
         /* background-color: red; */
         margin-bottom: 10px;
     }
+
+        .mytask-title-title {
+            text-decoration: none !important;
+            color: black;
+            font-size: 1.20rem;
+        }
 
     .mytask-title, .mytask-body {
         text-align: center;
