@@ -1,0 +1,29 @@
+<div class="table table-responsive-lg">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">title</th>
+                <th scope="col">body</th>
+                <th scope="col">deadline</th>
+                <th scope="col">category name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @tasks.each do |task| %>
+                <tr data-link="<%= task_path(task) %>" class='mylink'>
+                    <td scope="row"><%= task.title%></td>
+                    <td><%= task.body%></td>
+                    <td><%= task.deadline%></td>
+                    <% c = @categories.to_a.map(&:serializable_hash) %>
+                    <% c.each do |categ| %>
+                        <% if (categ['id'] == task.category_id) %>
+                            <td><%= categ['name']%></td>
+                        <% end %>   
+                    <% end %>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <br>
+    <%= link_to "New Task", new_task_path %>
+</div>

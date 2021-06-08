@@ -3,26 +3,21 @@
         <thead>
             <tr>
                 <th scope="col">name</th>
-                <th scope="col">UUID</th>
-                <th scope="col">user_id</th>
             </tr>
         </thead>
         <tbody>
             <% @categories.each do |categ| %>
-                <tr>
+                <tr data-link="<%= category_path(categ) %>" class='mylink'>
                     <td scope="row"><%= categ.name%></td>
-                    <td><%= categ.id%></td>
-                    <td><%= categ.user_id%></td>
-                    <td><%= link_to "View", categ %></td>
-                    <td><%= link_to "Edit", edit_category_path(categ) %></td>
-                    <td><%= link_to "Delete", categ, method: :delete, data: { confirm: "Are you sure?" } %></td>
                 </tr>
             <% end %>
         </tbody>
     </table>
+    <br>
+    <%= link_to "New Category", new_category_path %>
 </div>
-<br>
-<%= link_to "New Category", new_category_path %>
+
+
 
 
 <!--this is probably not needed, redundant-->

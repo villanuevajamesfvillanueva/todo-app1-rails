@@ -19,7 +19,7 @@ draggables.forEach(draggable => {
 
         statuses.forEach(status => {
             var count = status.childElementCount - 1;
-            const counter = status.firstElementChild.lastElementChild
+            const counter = status.firstElementChild.lastElementChild.firstElementChild
             counter.innerHTML = count;
         });
         //not a good practice? i think it's better if count comes from server since there should only be one source of truth
@@ -53,3 +53,6 @@ function getDragAfterElement(container, y) {
 }
 
 
+$("tr[data-link]").click(function() {
+    window.location = $(this).data("link")
+})

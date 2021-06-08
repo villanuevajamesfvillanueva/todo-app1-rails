@@ -1,70 +1,4 @@
 <div class='mainboard-container'>
-    <div class="table table-responsive-lg">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">title</th>
-                    <th scope="col">body</th>
-                    <th scope="col">deadline</th>
-                    <th scope="col">id(pk)</th>
-                    <th scope="col">category_id(fk)</th>
-                    <th scope="col">category_name</th>
-                    <th scope="col">username</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @tasks.each do |task| %>
-                    <tr>
-                        <td scope="row"><%= task.title%></td>
-                        <td><%= task.body%></td>
-                        <td><%= task.deadline%></td>
-                        <td><%= task.id%></td>
-                        <td><%= task.category_id%></td>
-                        <% c = @categories.to_a.map(&:serializable_hash) %>
-                        <% c.each do |categ| %>
-                            <% if (categ['id'] == task.category_id) %>
-                                <td><%= categ['name']%></td>
-                            <% end %>   
-                        <% end %>
-                        <td><%= task.category.user.username%></td>
-                        <td><%= link_to "View", task %></td>
-                        <td><%= link_to "Edit", edit_task_path(task) %></td>
-                        <td><%= link_to "Delete", task, method: :delete, data: { confirm: "Are you sure?" } %></td>
-                    </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </div>
-
-
-
-    <div class="table table-responsive-lg">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">name</th>
-                    <th scope="col">UUID</th>
-                    <th scope="col">username</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @categories.each do |categ| %>
-                    <tr>
-                        <td scope="row"><%= categ.name%></td>
-                        <td><%= categ.id%></td>
-                        <td><%= categ.user.username%></td>
-                        <td><%= link_to "View", categ %></td>
-                        <td><%= link_to "Edit", edit_category_path(categ) %></td>
-                        <td><%= link_to "Delete", categ, method: :delete, data: { confirm: "Are you sure?" } %></td>
-                    </tr>
-                <% end %>
-            </tbody>
-        </table>
-        <br>
-        <%= link_to "New Category", new_category_path %>
-    </div>
-
-
     <div class='mainboard'>
         <div class='mainboard-header'>
             <h3>Tasks</h3>
@@ -81,13 +15,13 @@
             <div class='status' id='completed'>
                 <div class='status-header'>
                     <h5>Completed</h5>
-                    <div class='task-counter'><%= @tasks.where(status: "completed").count %></div>
+                    <div class='task-counter'><p><%= @tasks.where(status: "completed").count %></p></div>
                 </div>
                 <% @tasks.where(status: "completed").order("deadline ASC").each do |todo| %>
                     <div class='mytask draggable' draggable='true' id='<%= todo.id %>'>
                         <div class='mytask-title'>
                             <td><%= link_to todo.title, todo, class: 'mytask-title-title'%></td>
-                            <span class='mytask-deadline'><%= todo.deadline %></span>
+                            <span class='mytask-deadline'><%= todo.deadline.strftime("%B %d, %Y") %></span>
                         </div>
                         <div class='mytask-body'><%= todo.body.first(200) %></div>
                     </div>
@@ -97,13 +31,13 @@
             <div class='status' id='in_progress'>
                 <div class='status-header'>
                     <h5>In Progress</h5>
-                    <div class='task-counter'><%= @tasks.where(status: "in_progress").count %></div>
+                    <div class='task-counter'><p><%= @tasks.where(status: "in_progress").count %></p></div>
                 </div>
                 <% @tasks.where(status: "in_progress").order("deadline ASC").each do |todo| %>
                     <div class='mytask draggable' draggable='true' id='<%= todo.id %>'>
                         <div class='mytask-title'>
                             <td><%= link_to todo.title, todo, class: 'mytask-title-title'%></td>
-                            <span class='mytask-deadline'><%= todo.deadline %></span>
+                            <span class='mytask-deadline'><%= todo.deadline.strftime("%B %d, %Y") %></span>
                         </div>
                         <div class='mytask-body'><%= todo.body.first(200) %></div>
                     </div>
@@ -113,15 +47,15 @@
             <div class='status' id='unfinished'>
                 <div class='status-header'>
                     <h5>To Do</h5>
-                    <div class='task-counter'><%= @tasks.where(status: "unfinished").count %></div>
+                    <div class='task-counter'><p><%= @tasks.where(status: "unfinished").count %></p></div>
                 </div>
                 <%= link_to "+", new_task_path, type: :button, class: 'btn btn-primary add-task' %>
                 <% @tasks.where(status: "unfinished").order("deadline ASC").each do |todo| %>
-                    <%# todo.update(title: todo.title, body: todo.body, deadline: todo.deadline, category_id: todo.category_id, status: "unfinished") %>
                     <div class='mytask draggable' draggable='true' id='<%= todo.id %>'>
                         <div class='mytask-title'>
                             <td><%= link_to todo.title, todo, class: 'mytask-title-title'%></td>
-                            <span class='mytask-deadline'><%= todo.deadline %></span>
+                            <span class='mytask-deadline'><%= todo.deadline.strftime("%B %d, %Y") %></span>
+                            
                         </div>
                         <div class='mytask-body'><%= todo.body.first(200) %></div>
                     </div>
