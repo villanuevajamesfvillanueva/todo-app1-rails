@@ -100,8 +100,8 @@
                 </div>
                 <%= link_to "+", new_task_path, type: :button, class: 'btn btn-primary add-task' %>
 
-                <% @tasks.where(status: "unfinished").each do |todo| %>
-                    <div class='mytask'>
+                <% @tasks.where(status: "unfinished").order("deadline ASC").each do |todo| %>
+                    <div class='mytask draggable' draggable='true'>
                         <div class='mytask-title'>
                             <td><%= link_to todo.title, todo, class: 'mytask-title-title'%></td>
                             <span class='mytask-deadline'><%= todo.deadline %></span>
