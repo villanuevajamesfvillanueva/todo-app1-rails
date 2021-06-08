@@ -1,5 +1,6 @@
 const draggables = document.querySelectorAll('.draggable');
 const statuses = document.querySelectorAll('.status');
+const taskCounters = document.querySelectorAll('.task-counter');
 
 draggables.forEach(draggable => {
     draggable.addEventListener('dragstart', () => {
@@ -15,6 +16,13 @@ draggables.forEach(draggable => {
                         'Accept': 'application/json' },
             body: JSON.stringify(task)
         })
+
+        statuses.forEach(status => {
+            var count = status.childElementCount - 1;
+            const counter = status.firstElementChild.lastElementChild
+            counter.innerHTML = count;
+        });
+        //not a good practice? i think it's better if count comes from server since there should only be one source of truth
     
     });
 });
