@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
 
-  
+  patch 'tasks/update_status/:id', to: 'tasks#update_status', as: 'update_status' 
   resources :tasks
   resources :categories
   # if nesting may do 

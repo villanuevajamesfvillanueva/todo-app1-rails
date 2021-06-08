@@ -7,6 +7,15 @@ draggables.forEach(draggable => {
     });
     draggable.addEventListener('dragend', () => {
         draggable.classList.remove('dragging');
+
+        const task =  { status: draggable.parentElement.id };
+        fetch('tasks/update_status/' + draggable.id, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json',
+                        'Accept': 'application/json' },
+            body: JSON.stringify(task)
+        })
+    
     });
 });
 
@@ -15,12 +24,8 @@ statuses.forEach(status => {
         e.preventDefault();
         const afterElement = getDragAfterElement(status, e.clientY);
         const draggable = document.querySelector('.dragging');
-        if (afterElement == null) {
-            status.appendChild(draggable);
-        }
-        else {
-            status.insertBefore(draggable, afterElement);
-        } 
+        if (afterElement == null) status.appendChild(draggable);
+        else status.insertBefore(draggable, afterElement);
     });
 });
 

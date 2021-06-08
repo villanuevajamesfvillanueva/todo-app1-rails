@@ -37,6 +37,12 @@ class TasksController < ApplicationController
         end
     end
 
+    def update_status
+        @task = Task.find(params[:id])
+        @task.update(status: params[:status])
+        
+    end
+
     def destroy
         @task = Task.find(params[:id])
         @task.destroy
