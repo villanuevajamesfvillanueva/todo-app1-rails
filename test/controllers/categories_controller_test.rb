@@ -1,12 +1,12 @@
 require "test_helper"
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
+#   include Devise::Test::IntegrationHelpers
  
   setup do
-    get '/users/sign_in'
+    # get '/users/sign_in'
     sign_in users(:one)
-    post user_session_url
+    # post user_session_url
 
     @category = categories(:one)
   end
@@ -21,16 +21,11 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should get create' do
-    post categories_path, params: { category: {name: 'category name'} }
-    assert_response :redirect
-  end
-
   test "should create a category" do
     assert_difference 'Category.count', 1 do
-      post categories_path(@category), params: { category: {name: 'category name'} }
+      post categories_path, params: { category: {name: 'category name'} }
+      assert_redirected_to root_path
     end
-    assert_redirected_to root_path
   end
 
   test "should show a category" do

@@ -1,7 +1,7 @@
 require "test_helper"
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
+#   include Devise::Test::IntegrationHelpers
   
   setup do
     get '/users/sign_in'
