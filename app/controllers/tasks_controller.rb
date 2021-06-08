@@ -1,12 +1,11 @@
 class TasksController < ApplicationController
     def index
-        @tasks = Task.all.order("updated_at DESC")
-        # @categories = Category.all
+        @tasks = current_user.tasks.order("updated_at DESC")
     end
 
     def tasks_list
-        @tasks = Task.all.order("updated_at DESC")
-        @categories = Category.all
+        @tasks = current_user.tasks.order("deadline ASC")
+        @categories = current_user.categories
     end
 
     def new                         
