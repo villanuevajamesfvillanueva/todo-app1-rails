@@ -52,7 +52,17 @@ function getDragAfterElement(container, y) {
     }, { offset: Number.NEGATIVE_INFINITY }).element;
 }
 
-
+//for tasks tr link_to view
 $("tr[data-link]").click(function() {
+    window.location = $(this).data("link")
+})
+
+//for categories header link_to view
+$("h4[data-link]").click(function() {
+    window.location = $(this).data("link")
+})
+
+//for tasks link_to view under categories show all
+$("li[data-link]").click(function() {
     window.location = $(this).data("link")
 })
