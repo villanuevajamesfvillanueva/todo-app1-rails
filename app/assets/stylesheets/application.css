@@ -157,6 +157,10 @@ body {
         }
 
             .status-header {
+                /* position: -webkit-sticky; 
+                position: sticky;
+                top: 10px;
+                background-color: var(--status-bg-color); */
                 display: flex;
                 justify-content: space-between;
                 align-items: center;

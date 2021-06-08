@@ -8,36 +8,34 @@
         
         <ul class="navbar-nav mr-auto flex-column">
 
+            <li>Hello <%= current_user.username %>!</li>
+            <li>Let's be productive today</li>
+
+            <li class="nav-item active">
+                <%= link_to 'Home', root_path, class:'nav-link'%>
+            </li>
+
+            <li class="nav-item">
+                <%= link_to 'Calendar', root_path, class:'nav-link disabled'%>
+            </li>
+
+            <li class="nav-item">
+                <%= link_to 'Projects', root_path, class:'nav-link disabled'%>
+            </li>
+
+            <li class="nav-item active">
+                <%= link_to 'Categories', categories_path, class:'nav-link'%>
+            </li>
+
+            <li class="nav-item active">
+                <%= link_to 'Tasks', tasks_list_path, class:'nav-link'%>
+            </li>
             
-                <li>Hello <%= current_user.username %>!</li>
-                <li>Let's be productive today</li>
-
-                <li class="nav-item active">
-                    <%= link_to 'Home', root_path, class:'nav-link'%>
-                </li>
-
-                <li class="nav-item">
-                    <%= link_to 'Calendar', root_path, class:'nav-link disabled'%>
-                </li>
-
-                <li class="nav-item">
-                    <%= link_to 'Projects', root_path, class:'nav-link disabled'%>
-                </li>
-
-                <li class="nav-item active">
-                    <%= link_to 'Categories', categories_path, class:'nav-link'%>
-                </li>
-
-                <li class="nav-item active">
-                    <%= link_to 'Tasks', tasks_list_path, class:'nav-link'%>
-                </li>
-                
-                <li class="nav-item">
-                    <%= link_to 'Settings', root_path, class:'nav-link disabled'%>
-                </li>
+            <li class="nav-item">
+                <%= link_to 'Settings', root_path, class:'nav-link disabled'%>
+            </li>
 
             
-
         </ul>
 
     <!--<form class="form-inline my-2 my-lg-0">
