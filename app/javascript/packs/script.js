@@ -18,7 +18,7 @@ draggables.forEach(draggable => {
         })
 
         statuses.forEach(status => {
-            var count = status.childElementCount - 1;
+            var count = status.childElementCount - 2;
             const counter = status.firstElementChild.lastElementChild.firstElementChild
             counter.innerHTML = count;
         });
