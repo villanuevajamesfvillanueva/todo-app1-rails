@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light flex-column">
+<nav class="navbar navbar-expand-lg navbar-light flex-column">
     <br>
     <div class='logo-div'>
         <%= image_tag 'rocket.svg', size: "40x40" %>
@@ -19,32 +19,40 @@
             </div>
             
             <li class="nav-item active mysidenav">
+                <%= image_tag 'home.svg', size: "20x20" %>
                 <%= link_to 'Home', root_path, class:'nav-link'%>
             </li>
 
             <li class="nav-item mysidenav">
+                <%= image_tag 'calendar.svg', size: "20x20" %>
                 <%= link_to 'Calendar', root_path, class:'nav-link disabled'%>
             </li>
 
             <li class="nav-item mysidenav">
+                <%= image_tag 'projects.svg', size: "20x20" %>
                 <%= link_to 'Projects', root_path, class:'nav-link disabled'%>
             </li>
 
             <li class="nav-item active mysidenav">
+                <%= image_tag 'categories.svg', size: "20x20" %>
                 <%= link_to 'Categories', categories_path, class:'nav-link'%>
             </li>
 
             <li class="nav-item active mysidenav">
+                <%= image_tag 'tasks.svg', size: "20x20" %>
                 <%= link_to 'Tasks', tasks_list_path, class:'nav-link'%>
             </li>
-            
+
+            <br><br><br><br>
+
             <li class="nav-item mysidenav">
+                <%= image_tag 'settings.svg', size: "20x20" %>
                 <%= link_to 'Settings', root_path, class:'nav-link disabled'%>
             </li>
 
-            <br><br>
             <li class="nav-item mysidenav">
-                <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'dropdown-item'%>
+                <%= image_tag 'logout.svg', size: "20x20" %>
+                <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'nav-link'%>
             </li>
 
         </ul>

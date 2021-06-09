@@ -18,13 +18,18 @@
 
 :root {
     --line-color: #d2d2d2;
-    --status-bg-color: #ceead460;
-    --add-task-bg-color: #aee5B0;
-    --task-counter-color: #40694c;
+    --status-bg: #f5f9f9;
+    --task-counter-color: #12a13d;
+    --task-counter-bg: #e9f1f0;
+    --add-task-hover: #81dd9c;
 }
 
 body {
     font-family: 'Poppins';
+}
+
+a:hover, .mylink:hover {
+    text-decoration: none;
 }
 
 /*-------------------- custom scrollbar --------------------*/
@@ -95,8 +100,8 @@ body {
         width: 250px;
     }
         .user-avatar {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 50% 50%;
             background-color: blue;
         }
@@ -139,9 +144,6 @@ body {
     margin: 5px auto 0;
 }
 
-/* .mainboard-container {
-    width: 100%;
-} */
 
 .scope {
     width: 135px;
@@ -169,17 +171,17 @@ body {
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            border: 1px solid var(--line-color);
+            /* border: 1px solid var(--line-color); */
             border-radius: 15px;
-            background-color: var(--status-bg-color);
-            overflow-y: scroll;
+            background-color: var(--status-bg);
+            overflow: hidden;
         }
 
             .status-header {
                 /* position: -webkit-sticky; 
                 position: sticky;
                 top: 10px;
-                background-color: var(--status-bg-color); */
+                background-color: var(--status-bg); */
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -187,13 +189,16 @@ body {
                 width: 80%;
             }
 
+                .status-header h5 {
+                    font-size: 1rem;
+                }
+
                 .task-counter {
                     padding: 0;
                     width: 42px;
                     height: 42px;
-                    background-color: #FDB069;
+                    background-color: var(--task-counter-bg);
                     border-radius: 50%;
-                    font-weight: bold;
                     color: var(--task-counter-color);
                     
                     display: flex;
@@ -208,8 +213,23 @@ body {
 
             .add-task {
                 width: 80%;
+                /* height: 100px; */
+                /* padding: 5px auto 5px; */
                 margin: 0px auto 10px;
+                font-size: 1.5rem;
+                text-align: center;
+                border-radius: 5px;
+                background-color: var(--task-counter-bg);
+                color: var(--task-counter-color);
+                /* background-color: red; */
+                
             }
+
+                .add-task:hover {
+                    color: var(--task-counter-color);
+                    color: white;
+                    background-color: var(--add-task-hover);
+                }
 
             .draggable {
                 cursor: grab;
@@ -229,15 +249,9 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-    .add-task {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
     .mytask-title {
         display: flex;
         justify-content: space-between;
-        /* background-color: red; */
         margin-bottom: 10px;
     }
 
@@ -266,7 +280,7 @@ body {
 }
 
     .category-div {
-        /* background-color: var(--status-bg-color); */
+        /* background-color: var(--status-bg); */
         width: 320px;
         padding: 10px;
         display: flex;
@@ -292,12 +306,11 @@ body {
 
             .category-div-header > div {
                 font-size: 0.9rem;
-                background-color: #FDB069;
+                background-color: var(--task-counter-bg);
                 width: 42px;
                 height: 42px;
                 border-radius: 50%;
                 color: var(--task-counter-color);
-                font-weight: bold;
 
                 display: flex;
                 justify-content: center;
@@ -319,10 +332,25 @@ body {
         }
 
             .category-div > ul > li {
-                text-decoration: none;
-                /* list-style-type: none; */
                 
             }
+
+            .add-task-in-categ {
+                background-color: var(--task-counter-bg);
+                width: 80%;
+                color: var(--task-counter-color);
+                /* height: auto; */
+                margin: 20px auto;
+                padding: 5px;
+                border-radius: 5px;
+                text-decoration: none !important;
+            }
+
+                .add-task-in-categ:hover {
+                    color: white !important;
+                    background-color: var(--add-task-hover);
+                    text-decoration: none !important;
+                }
 
 .create-category {
     display: flex;
@@ -330,6 +358,10 @@ body {
 }
 
 /*-------------------- sidenav --------------------*/
+nav {
+    border-right: 4px solid rgba(179, 179, 179, 0.5);
+}
+
 nav.navbar {
     display: flex !important;
     flex-direction: column !important;
@@ -338,7 +370,6 @@ nav.navbar {
 }
 
 .navbar-nav {
-    /* background-color: green; */
     width: 100%;
     height: 80%;
     display: flex;
@@ -360,4 +391,16 @@ nav.navbar {
 
     .mysidenav {
         /* background-color: red; */
+    }
+
+    .navbar-nav .nav-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+        width: 80%;
+    }
+
+    .navbar-nav .nav-item .nav-link{
+        margin-left: 2rem;
     }

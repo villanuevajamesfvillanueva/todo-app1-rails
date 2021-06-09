@@ -22,8 +22,7 @@
             <% categ.tasks.each do |task| %>
                 <li data-link="<%= task_path(task) %>" class='mylink list-group-item'><%= task.title %></li>
             <% end %>
-            <li class='mylink list-group-item'><%= link_to "+", new_task_path %></li>
-            
+            <%= link_to "+", new_task_path, class: 'add-task-in-categ' %>
             </ul>
         </div>
     <% end %>

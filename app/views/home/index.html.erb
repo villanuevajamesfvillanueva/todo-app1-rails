@@ -13,12 +13,12 @@
         </div>
         <div class='status-container'>
 
-            <div class='status' id='unfinished'>
+            <div class='status' id='unfinished' onmouseover="this.style.overflowY='auto'" onmouseout="this.style.overflowY='hidden'">
                 <div class='status-header'>
                     <h5>To Do</h5>
                     <div class='task-counter'><p><%= @tasks.where(status: "unfinished").count %></p></div>
                 </div>
-                <%= link_to "+", new_task_path, type: :button, class: 'btn btn-primary add-task' %>
+                <%= link_to "+", new_task_path, type: :button, class: 'add-task' %>
                 <% @tasks.where(status: "unfinished").order("deadline ASC").each do |todo| %>
                     <div class='mytask draggable' draggable='true' id='<%= todo.id %>'>
                         <div class='mytask-title'>
@@ -31,12 +31,12 @@
                 <% end %>
             </div>
 
-            <div class='status' id='in_progress'>
+            <div class='status' id='in_progress' onmouseover="this.style.overflowY='auto'" onmouseout="this.style.overflowY='hidden'">
                 <div class='status-header'>
                     <h5>In Progress</h5>
                     <div class='task-counter'><p><%= @tasks.where(status: "in_progress").count %></p></div>
                 </div>
-                <%= link_to "+", new_task_path, type: :button, class: 'btn btn-primary add-task' %>
+                <%= link_to "+", new_task_path, type: :button, class: 'add-task' %>
                 <% @tasks.where(status: "in_progress").order("deadline ASC").each do |todo| %>
                     <div class='mytask draggable' draggable='true' id='<%= todo.id %>'>
                         <div class='mytask-title'>
@@ -48,12 +48,12 @@
                 <% end %>
             </div>
 
-            <div class='status' id='completed'>
+            <div class='status' id='completed' onmouseover="this.style.overflowY='auto'" onmouseout="this.style.overflowY='hidden'">
                 <div class='status-header'>
                     <h5>Completed</h5>
                     <div class='task-counter'><p><%= @tasks.where(status: "completed").count %></p></div>
                 </div>
-                <%= link_to "+", new_task_path, type: :button, class: 'btn btn-primary add-task' %>
+                <%= link_to "+", new_task_path, type: :button, class: 'add-task' %>
                 <% @tasks.where(status: "completed").order("deadline ASC").each do |todo| %>
                     <div class='mytask draggable' draggable='true' id='<%= todo.id %>'>
                         <div class='mytask-title'>
