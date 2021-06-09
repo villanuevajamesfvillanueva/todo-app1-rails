@@ -52,6 +52,19 @@ body {
     text-align: center;
 }
 
+/*-------------------- custom scrollbar --------------------*/
+.devise-partial {
+    /* background-color: red; */
+    /* padding-left: 20vw;
+    height: 100vh; */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* background-color: red; */
+    transform: translate(-50%,-70%);
+    
+}
+
 
 .myheader {
     display: flex;
@@ -109,6 +122,12 @@ body {
 
     .myyieldcontainer {
         width: 80vw;
+        /* height: 100%;
+        background-color: red;
+
+        display: flex;
+        justify-content: center;
+        align-items: center; */
     }
 
 
