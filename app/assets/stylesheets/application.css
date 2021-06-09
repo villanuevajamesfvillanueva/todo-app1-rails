@@ -125,7 +125,7 @@ body {
 } */
 
 .scope {
-    width: 127px;
+    width: 135px;
     /* none of these work */
     border: 0 !important;
     outline: none !important;
@@ -171,9 +171,9 @@ body {
                 .task-counter {
                     padding: 0;
                     width: 42px;
-                    height: 30px;
+                    height: 42px;
                     background-color: #FDB069;
-                    border-radius: 0.25rem;
+                    border-radius: 50%;
                     font-weight: bold;
                     color: var(--task-counter-color);
                     
@@ -207,6 +207,7 @@ body {
     border-radius: 1rem;
     padding: 15px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
     .add-task {
@@ -246,7 +247,7 @@ body {
 }
 
     .category-div {
-        /* background-color: red; */
+        /* background-color: var(--status-bg-color); */
         width: 320px;
         padding: 10px;
         display: flex;
@@ -255,18 +256,33 @@ body {
         margin: 0 30px 20px;
         border-radius: 1rem;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     }
 
         .category-div-header {
             display: flex;
             justify-content: space-around;
-            /* align-items: center; */
+            align-items: center;
             /* background-color: blue; */
             padding: 0;
         }
 
-            .category-div-header > span {
+            .category-div-header > h4 {
+                padding-top: 8px;
+            }
+
+            .category-div-header > div {
                 font-size: 0.9rem;
+                background-color: #FDB069;
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                color: var(--task-counter-color);
+                font-weight: bold;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
         .category-div ul {
@@ -286,8 +302,13 @@ body {
             .category-div > ul > li {
                 text-decoration: none;
                 /* list-style-type: none; */
+                
             }
 
+.create-category {
+    display: flex;
+    justify-content: center;
+}
 
 /*-------------------- sidenav --------------------*/
 nav.navbar {
