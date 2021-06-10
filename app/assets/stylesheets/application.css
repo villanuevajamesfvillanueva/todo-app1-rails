@@ -131,12 +131,6 @@ a:hover, .mylink:hover {
 
     .myyieldcontainer {
         width: 80vw;
-        /* height: 100%;
-        background-color: red;
-
-        display: flex;
-        justify-content: center;
-        align-items: center; */
     }
 
 
@@ -148,17 +142,20 @@ a:hover, .mylink:hover {
     margin: 5px auto 0;
 }
 
-
 .scope {
     width: 135px;
-    /* none of these work */
-    border: 0 !important;
-    outline: none !important;
-    box-shadow: none !important;
+    
 }
 
-    select:focus {
-        outline: none;
+#sel1 {
+    border: none;
+    cursor: pointer;
+}
+
+    #sel1:focus, select:focus, .form-control:focus {
+        outline: none !important;
+        box-shadow: none;
+        border: none;
     }
 
     .status-container {
