@@ -11,21 +11,21 @@
 </div>
 
 <div class="table table-responsive-lg">
-    <table class="table">
+    <table class="table table-fixed">
         <thead>
             <tr>
-                <th scope="col">title</th>
-                <th scope="col">body</th>
-                <th scope="col">deadline</th>
-                <th scope="col">category name</th>
+                <th>title</th>
+                <th>body</th>
+                <th>deadline</th>
+                <th>category name</th>
             </tr>
         </thead>
         <tbody>
             <% @tasks.each do |task| %>
                 <tr data-link="<%= task_path(task) %>" class='mylink'>
-                    <td scope="row"><%= task.title%></td>
-                    <td><%= task.body%></td>
-                    <td><%= task.deadline%></td>
+                    <td scope="row" class='tasks-list-task-title'><%= task.title%></td>
+                    <td class='tasks-list-task-body'><%= task.body%></td>
+                    <td><%= task.deadline.strftime("%B %d, %Y")%></td>
                     <% c = @categories.to_a.map(&:serializable_hash) %>
                     <% c.each do |categ| %>
                         <% if (categ['id'] == task.category_id) %>
@@ -39,3 +39,4 @@
     <br>
     <%= link_to "New Task", new_task_path %>
 </div>
+

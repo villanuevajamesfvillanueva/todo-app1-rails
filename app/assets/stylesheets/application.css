@@ -33,6 +33,8 @@ a:hover, .mylink:hover {
     text-decoration: none;
 }
 
+
+
 /*-------------------- custom scrollbar --------------------*/
 ::-webkit-scrollbar {
     width: 5px;
@@ -58,18 +60,77 @@ a:hover, .mylink:hover {
     text-align: center;
 }
 
-/*-------------------- custom scrollbar --------------------*/
+
+
+/*-------------------- devise partials --------------------*/
 .devise-partial {
-    /* background-color: red; */
-    /* padding-left: 20vw;
-    height: 100vh; */
     position: absolute;
     top: 40%;
     left: 50%;
-    /* background-color: red; */
     transform: translate(-50%,-70%);
-    
 }
+
+
+
+/*-------------------- sidenav --------------------*/
+nav {
+    border-right: 4px solid rgba(179, 179, 179, 0.5);
+    position: fixed !important;
+    width: 20vw;
+}
+
+nav.navbar {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+}
+
+.navbar-nav {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+    .greet-user-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+        .greet-user {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+    .navbar-nav .nav-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item .nav-link{
+        margin-left: 1rem;
+    }
+
+    .sidenav-counter {
+        background-color: var(--sidenav-counter-bg);
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        margin-right: 0px;
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        text-align: center;
+    }
 
 
 .myheader {
@@ -79,6 +140,7 @@ a:hover, .mylink:hover {
     height: 100px;
     width: 100%;
     padding: 0 50px;
+    /* position: fixed; */
 }
 
     a.username {
@@ -389,62 +451,13 @@ a:hover, .mylink:hover {
     justify-content: center;
 }
 
-/*-------------------- sidenav --------------------*/
-nav {
-    border-right: 4px solid rgba(179, 179, 179, 0.5);
+
+
+/*-------------------- tasks-list page --------------------*/
+
+.tasks-list-task-title {
+    max-width: 250px;
 }
-
-nav.navbar {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-around !important;
-    align-items: center !important;
+.tasks-list-task-body {
+    max-width: 600px;
 }
-
-.navbar-nav {
-    width: 100%;
-    height: 80%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-    .greet-user-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 3rem;
-    }
-
-        .greet-user {
-            font-size: 1.25rem;
-            font-weight: 500;
-        }
-
-    .navbar-nav .nav-item {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-    }
-
-    .navbar-nav .nav-item .nav-link{
-        margin-left: 1rem;
-    }
-
-    .sidenav-counter {
-        background-color: var(--sidenav-counter-bg);
-        color: white;
-        width: 30px;
-        height: 30px;
-        border-radius: 10px;
-        margin-right: 0px;
-        margin-left: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        text-align: center;
-    }
-
-
