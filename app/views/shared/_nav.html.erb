@@ -31,16 +31,24 @@
             <li class="nav-item mysidenav">
                 <%= image_tag 'projects.svg', size: "20x20" %>
                 <%= link_to 'Projects', root_path, class:'nav-link disabled'%>
+                <!--<div class='sidenav-counter'><div>99</div></div>-->
             </li>
 
             <li class="nav-item active mysidenav">
                 <%= image_tag 'categories.svg', size: "20x20" %>
                 <%= link_to 'Categories', categories_path, class:'nav-link'%>
+                <div class='sidenav-counter'>
+                    <div id='sidenav-categories-counter'><%= @categories.count %></div>
+                </div>
             </li>
 
             <li class="nav-item active mysidenav">
                 <%= image_tag 'tasks.svg', size: "20x20" %>
                 <%= link_to 'Tasks', tasks_list_path, class:'nav-link'%>
+                <div class='sidenav-counter'>
+                    <div id='sidenav-tasks-counter'><%= @tasks.count %>
+                    </div>
+                </div>
             </li>
 
             <br><br><br><br>

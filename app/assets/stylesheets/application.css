@@ -22,6 +22,7 @@
     --task-counter-color: #12a13d;
     --task-counter-bg: #e9f1f0;
     --add-task-hover: #81dd9c;
+    --sidenav-counter-bg: #ff9400;
 }
 
 body {
@@ -390,18 +391,30 @@ nav.navbar {
             font-weight: 500;
         }
 
-    .mysidenav {
-        /* background-color: red; */
-    }
-
     .navbar-nav .nav-item {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        
-        width: 80%;
+        width: 100%;
     }
 
     .navbar-nav .nav-item .nav-link{
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
+
+    .sidenav-counter {
+        background-color: var(--sidenav-counter-bg);
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        margin-right: 0px;
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        text-align: center;
+    }
+
+

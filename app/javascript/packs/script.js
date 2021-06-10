@@ -66,3 +66,4 @@ $("h4[data-link]").click(function() {
 $("li[data-link]").click(function() {
     window.location = $(this).data("link")
 })
+
