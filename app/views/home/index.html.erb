@@ -22,9 +22,11 @@
                 <% @tasks.where(status: "unfinished").order("deadline ASC").each do |todo| %>
                     <div class='mytask draggable' draggable='true' id='<%= todo.id %>'>
                         <div class='mytask-title'>
-                            <td><%= link_to todo.title, todo, class: 'mytask-title-title'%></td>
+                            <div>
+                                <div class='categ-marker'></div>
+                                <td><%= link_to todo.title, todo, class: 'mytask-title-title'%></td>
+                            </div>
                             <span class='mytask-deadline'><%= todo.deadline.strftime("%B %d, %Y") %></span>
-                            
                         </div>
                         <div class='mytask-body'><%= todo.body.first(200) %></div>
                     </div>
@@ -40,7 +42,10 @@
                 <% @tasks.where(status: "in_progress").order("deadline ASC").each do |todo| %>
                     <div class='mytask draggable' draggable='true' id='<%= todo.id %>'>
                         <div class='mytask-title'>
-                            <td><%= link_to todo.title, todo, class: 'mytask-title-title'%></td>
+                            <div>
+                                <div class='categ-marker'></div>
+                                <td><%= link_to todo.title, todo, class: 'mytask-title-title'%></td>
+                            </div>
                             <span class='mytask-deadline'><%= todo.deadline.strftime("%B %d, %Y") %></span>
                         </div>
                         <div class='mytask-body'><%= todo.body.first(200) %></div>
@@ -57,7 +62,10 @@
                 <% @tasks.where(status: "completed").order("deadline ASC").each do |todo| %>
                     <div class='mytask draggable' draggable='true' id='<%= todo.id %>'>
                         <div class='mytask-title'>
-                            <td><%= link_to todo.title, todo, class: 'mytask-title-title'%></td>
+                            <div>
+                                <div class='categ-marker'></div>
+                                <td><%= link_to todo.title, todo, class: 'mytask-title-title'%></td>
+                            </div>
                             <span class='mytask-deadline'><%= todo.deadline.strftime("%B %d, %Y") %></span>
                         </div>
                         <div class='mytask-body'><%= todo.body.first(200) %></div>

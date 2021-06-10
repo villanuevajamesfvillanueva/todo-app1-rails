@@ -253,19 +253,49 @@ a:hover, .mylink:hover {
 
     .mytask-title {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
         margin-bottom: 10px;
+        /* background-color: green; */
     }
 
-        .mytask-title-title {
-            text-decoration: none !important;
-            color: black;
-            font-size: 1.20rem;
+        .mytask-title > div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            /* background-color: gray; */
+            width: 100%;
         }
+
+            .categ-marker{
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: red;
+                margin-right: 15px;
+            }
+
+            .mytask-deadline {
+                margin-left: 22px;
+                font-size: 0.8rem;
+            }
+
+            .mytask-title-title {
+                text-decoration: none !important;
+                color: black;
+                font-size: 1.20rem;
+                margin: 0;
+                padding: 0;
+            }
 
     .mytask-title, .mytask-body {
         text-align: center;
         padding: 0 5px;
+    }
+
+    .mytask-body {
+        color: gray;
     }
 
 
