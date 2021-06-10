@@ -80,6 +80,10 @@ a:hover, .mylink:hover {
     padding: 0 50px;
 }
 
+    a.username {
+        color: black;
+    }
+
     .searchbar-container, .searchbar {
         width: 500px ;
     }
