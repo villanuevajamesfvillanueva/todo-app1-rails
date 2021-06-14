@@ -170,7 +170,7 @@ nav.navbar {
             width: 55px;
             height: 55px;
             border-radius: 50% 50%;
-            background-color: blue;
+            background-color: var(--add-task-hover);
         }
 
 .mymain {
